@@ -23,7 +23,7 @@ i {
 }
 
 .BodySection>div>div:hover:nth-child(1) {
-  background-color:white;
+  background-color: inherit;
 }
 
 .Body{
