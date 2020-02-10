@@ -36,10 +36,28 @@ i {
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
-    width: 15%;
+    flex-grow: 1;
+    z-index: 3;
 }
 
-.BodyContent{display: flex;width: 85%;}
+.BodyContent{
+  display: flex;
+  flex-grow: 9;
+  flex-direction: column;
+  overflow: hidden;
+  }
+
+.BodyContent>div{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+.BodyContent>div:nth-child(2n) {
+  background-color:#f1f1f1;
+  flex-direction:row-reverse;
+}
 
 .Main {display: flex;flex-direction: column;}
 
@@ -74,6 +92,8 @@ i {
   background-color: #4CAF50;
   color: white;
   font-size: 16px;
+  z-index: 1;
+  box-shadow: 0 2px 5px 0px rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
 }
 
 .Header2NavBar{
@@ -87,9 +107,10 @@ i {
 
 .Header2NavBar>div>div {
   padding: 16px;
+  display: inline;
 }
 
-.Header2NavBar>div>div:hover {
+.Header2NavBar > div > div:hover {
   background-color:white;
   color: black;
 }
@@ -102,4 +123,86 @@ i {
 .Header2NavBarLeft{
   display: flex;
   flex-wrap: wrap;
+}
+
+.Box1,.Box2 {
+  width:50%;
+  height: 450px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.Box1 button {
+  background-color:#616161;
+  color:white;
+  border:none;
+  box-sizing:border-box;
+  font-size:16px;
+  text-transform:uppercase;
+  margin:5px 0 5px 5px;
+  padding: 10px 14px;
+  overflow: hidden;
+}
+
+.Box2 button {
+  background-color:#4caf30;
+  color:white;
+  border:none;
+  box-sizing:border-box;
+  font-size:12px;
+  text-transform:uppercase;
+  margin:5px 0 5px 5px;
+  padding: 8px 16px;
+  font-family:Verdana,sans-serif;
+}
+
+.Box1 > div:nth-child(1){
+  font-size:35px;
+}
+
+.Box2 >div {background-color: #f1f1f1;width: 90%;display: flex;justify-content: center;align-items: center;height: 75%;box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);}
+
+.Box2 > div >div {width: 100%;box-sizing: border-box;display: flex;flex-direction:column;justify-content: space-between;align-items: flex-start;height: 100%;padding: 5%;}
+
+.Box2>div>div>div{
+  color:white
+}
+
+.Box2>div>div>div:nth-child(2){
+  border-left: 3px solid #4caf30;
+}
+
+.BodyContent>div:nth-child(2n) div {
+  box-shadow:none;
+}
+
+.Box1 > div{
+  display:flex;
+  text-align:center;
+}
+
+@media screen and (max-width:650px) {
+
+.Box1,.Box2 {
+  height:200px;
+}
+button{
+  padding:2px 4px;
+}
+.BodySection {
+  display:none;
+}
+
+.Header1 {
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+}
+
+.Box1 > div{
+  flex-direction:column;
+ }
+
 }
